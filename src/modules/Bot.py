@@ -10,7 +10,7 @@ from modules.logs import logger
 from discord.ext import commands
 from typing import List, Optional
 
-TOKEN = 'NzIzMDg0NTQ4MTgyNzY5Njc1.GaQmAe.2Cjapp9a7EWW9XrtF-cPgOGYNxW6QcFwMWLk_k'
+TOKEN = 'NzIzMDg0NTQ4MTgyNzY5Njc1.GEXSV3.yJRTQ0Kqrj_UCtczoxhDl9CxviC_HQ6Kv36e3I'
 
 def restart() -> None:
     """ Перезагрука проекта """
@@ -29,6 +29,7 @@ class MyBot(commands.Bot):
         super().__init__(*args, **kwargs, intents=intents)
         self.testing_guild_id = testing_guild_id
         self.initial_extensions = initial_extensions
+        self.config = None
 
 
     async def on_connect(self) -> None:
