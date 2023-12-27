@@ -21,7 +21,7 @@ class RinoOnVoiceStateUpdateEvent(commands.Cog):
         # Подключился к голосовому каналу
         if before.channel is None and after.channel:
             add_voice_connection(member.id, member.guild.id)
-            logger.info(f'сервер {member.guild.id} новое подключение к войсу')
+            logger.info(f'сервер {member.guild.id} новое подключение к войсу {after.channel.name}')
 
 
 async def setup(bot):
