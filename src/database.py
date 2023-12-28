@@ -65,17 +65,27 @@ def get_user_leveling(user_id, guild_id):
             return existing_user_leveling
         else:
             return None
-            
+
 def add_voice_connection(user_id, guild_id):
     with Session(autoflush=False, bind=engine) as session:
         existing_user_leveling = session.query(UserLeveling).filter_by(user_id=user_id, guild_id=guild_id).first()
         if existing_user_leveling is not None:
-            existing_user_leveling.voice_connections  += 1
+            existing_user_leveling.voice_connections += 1
             session.commit()
             return True
         else:
             return None
-        
+
+def add_voice_time(user_id, guild_id):
+    with Session(autoflush=False, bind=engine) as session:
+        existing_user_leveling = session.query(UserLeveling).filter_by(user_id=user_id, guild_id=guild_id).first()
+        if existing_user_leveling is not None:
+            existing_user_leveling.all_voice_time += 5
+            session.commit()
+            return True
+        else:
+            return None
+
 def create_user_leveling(user_id, guild_id):
     with Session(autoflush=False, bind=engine) as session:
         existing_user_leveling = session.query(UserLeveling).filter_by(user_id=user_id, guild_id=guild_id).first()

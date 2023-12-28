@@ -23,6 +23,9 @@ class RinoOnMemberJoinEvent(commands.Cog):
             return
 
         if member.guild.id == 764486596543250452:
+            role = member.guild.get_role(835263294926356530)
+            await member.add_roles(role)
+
             channel = self.bot.get_channel(874080432088576071) 
             user_info = get_user_info(member.id, member.guild.id)
             if user_info is not None:

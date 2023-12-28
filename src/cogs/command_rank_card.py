@@ -5,6 +5,7 @@ import io
 import time
 import discord
 from discord.ext import commands
+from datetime import timedelta
 from PIL import Image, ImageDraw, ImageFont
 from database import get_user_leveling
 
@@ -79,8 +80,11 @@ class RinoCommandRankCard(commands.Cog):
                 idraw.text((640-text_width2, 540), str(voice_connections), fill='white', font=font3)
 
                 # Время в войсе
-                idraw.text((57, 540), "пока не считается", fill='white', font=font3)
-                
+                all_voice_time_ = get_user_leveling(ctx.author.id, ctx.guild.id).all_voice_time
+                if member is not None:
+                    all_voice_time_ = get_user_leveling(member.id, ctx.guild.id).all_voice_time
+                all_voice_time = timedelta(seconds=all_voice_time_)
+                idraw.text((57, 540), str(all_voice_time), fill='white', font=font3)
 
                 result_image_path = "cards/123.png"
                 blank_image.save(result_image_path)
@@ -91,7 +95,7 @@ class RinoCommandRankCard(commands.Cog):
                 end_time = time.time()
                 excecution_time = end_time - start_time
 
-                await ctx.send(f'**БД**: 1 ms\n**API**: {bot_latency} ms\n**ET**: {excecution_time} s', file=discord.File(open(result_image_path, 'rb')))
+                await ctx.send(file=discord.File(open(result_image_path, 'rb')))
         except Exception as e:
             print(e)
 
