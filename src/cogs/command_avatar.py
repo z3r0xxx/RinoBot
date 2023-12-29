@@ -27,7 +27,7 @@ class RinoCommandAvatar(commands.Cog):
         embed.title = f'Аватар {str(ctx.author.name)}'
         if member is not None:
             embed.title = f'Аватар {str(member.name)}'
-        embed.description = f'[png]({avatar_as_png})⠀⠀|⠀⠀[jpg]({avatar_as_jpg})⠀⠀|⠀⠀[webp]({avatar_as_webp})'
+        embed.description = f'[png]({avatar_as_png}) | [jpg]({avatar_as_jpg}) | [webp]({avatar_as_webp})'
         embed.set_image(url=avatar)
 
         await ctx.send(embed=embed)
