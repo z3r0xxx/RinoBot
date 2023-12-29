@@ -1,6 +1,0 @@
-2023-11-23 04:28:51.167  INFO 21396 --- [XNIO-1 I/O-10] lavalink.server.io.SocketServer          : Connection closed from /127.0.0.1:57318 -- CloseStatus[code=1006, reason=]
-2023-11-23 04:28:51.205  INFO 21396 --- [XNIO-1 I/O-10] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
-2023-11-23 04:28:55.516  INFO 21396 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /127.0.0.1:58442
-2023-11-23 04:28:55.553  INFO 21396 --- [XNIO-1 task-1] lavalink.server.io.RequestLoggingFilter  : GET /, client=127.0.0.1
-2023-11-23 04:28:55.568  INFO 21396 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from Wavelink/2.6.4
-2023-11-23 04:28:55.582  INFO 21396 --- [XNIO-1 task-2] lavalink.server.io.RequestLoggingFilter  : GET /version, client=127.0.0.1
